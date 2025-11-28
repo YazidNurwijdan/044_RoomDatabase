@@ -1,19 +1,10 @@
-package com.example.questroom.repositori
+package com.example.questroom.room
 
-import com.example.questroom.room.Siswa
-import com.example.questroom.room.SiswaDao
-import kotlinx.coroutines.flow.Flow
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 
-interface RepositoriSiswa {
-    fun getAllSiswaStream(): Flow<List<Siswa>>
-    suspend fun insertSiswa(siswa: Siswa)
-
-}
-
-class OfflineRepositoriSiswa(
-    private val siswaDao: SiswaDao
-) : RepositoriSiswa {
-    override fun getAllSiswaStream(): Flow<List<Siswa>> = siswaDao.getAllSiswa()
-    override suspend fun insertSiswa(siswa: Siswa) = siswaDao.insert(siswa)
-
-}
+@Database(entities = [Siswa::class], version = 1, exportSchema = false)
+abstract class DatabaseSiswa : RoomDatabase() {
+    abstract fun siswaDao(): SiswaDao
