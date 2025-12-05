@@ -1,4 +1,4 @@
-package com.example.questroom.view.route
+package com.example.pam9.view.route
 
 interface DestinasiNavigasi {
     val route: String
