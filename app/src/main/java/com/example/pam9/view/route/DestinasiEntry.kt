@@ -1,7 +1,7 @@
-package com.example.questroom.view.route
+package com.example.pam9.view.route
 
-import com.example.questroom.R
-import com.example.questroom.view.route.DestinasiNavigasi
+import com.example.pam9.R
+import com.example.pam9.view.route.DestinasiNavigasi
 
 object DestinasiEntry: DestinasiNavigasi {
     override val route = "item_entry"
